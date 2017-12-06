@@ -46,7 +46,7 @@ BOOL MyDialog::OnInitDialog()
 	CDialogEx::OnInitDialog();
 	init.hwnd= this->m_hWnd;
 
-	init.SetWindowSize(0,0,_T("res\\aaa.jpg"));
+	init.SetWindowSize(1000,500);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常: OCX 属性页应返回 FALSE
@@ -58,7 +58,7 @@ BOOL MyDialog::OnInitDialog()
 void MyDialog::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-	init.SetBackPicture();
+	init.SetBackPicture(_T("res\\aaa.jpg"));
 	
 }
 

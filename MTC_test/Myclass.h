@@ -16,24 +16,23 @@ public:
 	}
 
 
-	void SetWindowSize(int height = 0 ,int wight = 0,LPCTSTR picture_path = 0)
+	void SetWindowSize(int height ,int wight)
 	{
 		//set the hight and the width
-		if (picture_path != NULL)
-		{
-			this->picture_path = picture_path;
-			img.Load(picture_path);
-			myWidth = img.GetWidth();	
-			myHight = img.GetHeight();
-		}
-		else
-		{
 			myWidth = wight;
 			myHight = height;
-		}
-
 		::MoveWindow(hwnd,200,200,myWidth,myHight,TRUE);
 	}
+
+	void SetWindowSize(LPCTSTR picture_path)
+	{
+		this->picture_path = picture_path;
+		img.Load(picture_path);
+		myWidth = img.GetWidth();	
+		myHight = img.GetHeight();
+		::MoveWindow(hwnd,200,200,myWidth,myHight,TRUE);
+	}
+
 	void SetBackPicture(LPCTSTR picture_path =0 )
 	{	
 		CRect rc;
